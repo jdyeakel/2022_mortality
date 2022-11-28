@@ -1,4 +1,4 @@
-# 2022_mortality
+# Files to generate the results explored in the paper: "On the dynamics of mortality and the ephemeral nature of mammalian megafauna" By Rallings, Kempes, Yeakel
 
 >   Note: In all notebooks, you must first change the paths for retrieving data from `data/` and for saving figure files.
 
