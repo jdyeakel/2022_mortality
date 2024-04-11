@@ -20,7 +20,7 @@ Included here are the raw data and julia + mathematica notebooks required to gen
 *   `predpreymass_tablereps.csv`: Bootstrapped values of predator and prey masses calculated in the Julia file `predpreyratio.jl`. These values are used to calculate the above predator-prey mass relationship. Columns - C1: prey mass (kg); C2: pred mass (kg)
 
 ## Scripts (/)
->   Note: In all scripts, you must first change the paths for retrieving data from `/data/` and for saving figure files.
+>   Note: In all scripts, you must first insert your own file path for retrieving data from `/data/` and for saving figure files.
 
 ### Julia (v. 1.8.2)
 *   `predpreyratio.jl`: This Julia script imports the averaged data collated from Hayward, 2006; Hayward et al., 2006a,b; Hayward and Kerley, 2008, 2005; Hayward et al., 2006c, (`data_hayward_all.csv`) describing the expected prey size of different large-bodied mammalian carnivores. The script then resamples predator body masses for each prey to obtain the expected predator mass given a particular prey body size. The fitted relationship (and 5/95% confidence intervals) are exported as `ppmr_fit_table_revreps.csv`, and the raw bootstrapped samples are exported as `predpreymass_tablereps.csv` (see above). These arrays are imported into the various mathematica scripts below for analysis and figure creation. 
