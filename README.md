@@ -1,5 +1,11 @@
 ## On the dynamics of mortality and the ephemeral nature of mammalian megafauna
 ### Taran Rallings, Christopher P. Kempes, Justin D. Yeakel
+
+Author Contact Information:   
+- T Rallings (trallings-at-gmail-dot-com)  
+- CP Kempes (ckempes-at-santafe-dot-edu)  
+- JD Yeakel (jyeakel-at-ucmerced-dot-edu)  
+
 Abstract - Energy flow through consumer-resource interactions is largely determined by body size. Allometric relationships govern the dynamics of populations by impacting rates of reproduction, as well as alternative sources of mortality, which have differential impacts on smaller to larger organisms. Here we derive and investigate the timescales associated with four alternative sources of mortality for terrestrial mammals: mortality from starvation, mortality associated with aging, mortality from consumption by predators, and mortality introduced by anthropogenic subsidized harvest. The incorporation of these allometric relationships into a minimal consumer-resource model illuminates central constraints that may contribute to the structure of mammalian communities. Our framework reveals that while starvation largely impacts smaller-bodied species, the allometry of senescence is expected to be more difficult to observe. In contrast, external predation and subsidized harvest have greater impacts on the populations of larger-bodied species. Moreover, the inclusion of predation mortality reveals mass thresholds for mammalian herbivores, where dynamic instabilities may limit the feasibility of megafaunal populations. We show how these thresholds vary with alternative predator-prey mass relationships, which are not well understood within terrestrial systems. Finally, we use our framework to predict the harvest pressure required to induce mass-specific extinctions, which closely align with previous estimates of anthropogenic megafaunal exploitation in both paleontological and historical contexts. Together our results underscore the tenuous nature of megafaunal populations, and how different sources of mortality may contribute to their ephemeral nature over evolutionary time.
 
 
@@ -9,7 +15,7 @@ Included here are the raw data and julia + mathematica notebooks required to gen
 ## Data Files (/data/)
 *   `densitydata.csv`: Mammalian density data by body size from Damuth et al. (1981). Columns - C1: Body mass (grams); C2: Density (inds/m^2)  
 *   `carnivoredensities_trimmed.csv`: Mammalian carnivore density data by body size from Carbon & Gittleman (2002). Columns - C1: Body mass (grams); C2: Density (inds/m^2)  
-*   `data_hayward_all.csv`: Prey preferences and dietary data for large-bodied carnivores collated from (Hayward, 2006; Hayward et al., 2006a,b; Hayward and Kerley, 2008, 2005; Hayward et al., 2006c). Columns - C1: Predator; C2: Predbodymasskg; C3: Prey; C4: JacobsIndex; C5: JI_SE; C6: PercentOfKills; C7: SE; C8: Preybodymasskg34adultfemalemass; C9: Preybodymasskg; C10: HerdSize; C11: HabitatDensity; C12: ThreatToPredator. See specific references for details
+*   `data_hayward_all.csv`: Prey preferences and dietary data for large-bodied carnivores collated from Hayward, 2006; Hayward et al., 2006a,b; Hayward and Kerley, 2008, 2005; Hayward et al., 2006c. Columns - C1: Predator; C2: Predbodymasskg; C3: Prey; C4: JacobsIndex; C5: JI_SE; C6: PercentOfKills; C7: SE; C8: Preybodymasskg34adultfemalemass; C9: Preybodymasskg; C10: HerdSize; C11: HabitatDensity; C12: ThreatToPredator. See specific references for details
 *   `ppmr_fit_table_revreps.csv`: Predator-prey mass relationship calculated in the Julia file `predpreyratio.jl`. These are the intercepts and slopes that determine the expected predator mass given a prey mass, and are imported and used in the mathematica scripts. Columns - C1: Best Fit; C2: 95% confidence interval low; C3: 95% confidence interval high. Rows - R1: Intercept; R2: Slope.  
 *   `predpreymass_tablereps.csv`: Bootstrapped values of predator and prey masses calculated in the Julia file `predpreyratio.jl`. These values are used to calculate the above predator-prey mass relationship. Columns - C1: prey mass (kg); C2: pred mass (kg)
 
@@ -21,12 +27,12 @@ Included here are the raw data and julia + mathematica notebooks required to gen
 
 ### Mathematica (v. 14.0)
 
+*   `carryingcapacity_stability.nb`: Assessment of how changes to resource growth rates and carrying capacities alter the range of consumer mass-density relationships. This creates Figure 1 (main text). In addition, this script contains the stability analysis detailed in Supplemental Figure C1 (Determinant of the Jacobian and real values of associated Jacobian eigenvalues for consumer-resource system as a function of consumer mass) and Supplemental Figure C5 (the effect of changes to the carrying capacity on the consumer mass threshold).  
 *   `naturalmoralityrate.nb`: Details expression of the natural mortality rate (cohort mortality and actuarial mortality). This creates Figure 2 (main text).  
 *   `starvationmortalityrate.nb`: Details expression of the the starvation mortality rate. This creates Figure 3 (main text).  
 *   `predationrate_specialist.nb`: Details expression of the mortality rate due to a specialist predator featured primarily in the main text, and creates Figure 4 (main text). This script imports `ppmr_fit_table_revreps.csv` and `predpreymass_tablereps.csv` to build panel B in Figure 4, and establishes the expected predator body size given a prey body size used in the analysis. This script also creates Supplemental Figure C3, describing mass ranges corresponding to feasible megatrophic interactions.
 *   `predationrate_generalist.nb`:  Details expression of the mortality rate due to a generalist predator, which is discussed in the main text, with findings primarily shown in the Supplement. Creates Supplemental Figure C2 (The effect of changing the predation intensity on the single herbivore consumer population) and C4 (The effects of lower predation intensity threshold herbivore mass and threshold predator mass across variable PPMRs) in the supplement. 
 *   `harvestmortalityrate.nb`: Details expression of the harvest pressure. This creates Figure 5 (main text).   
-*   `carryingcapacity_stability.nb`: Stability analysis detailed in Supplemental Figure C1 (Determinant of the Jacobian and real values of associated Jacobian eigenvalues for consumer-resource system as a function of consumer mass) and Supplemental Figure C5 (the effect of changes to the carrying capacity on the consumer mass threshold).  
 
 
 ### References
